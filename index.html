@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PoMoDoRo</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <audio id="mooSound" src="assets/moo.wav"></audio>
+        <audio id="splatSound" src="assets/splat.wav"></audio>
+        <div id="app">
+            <h1>PoMoDoRo</h1>
+            <br><br>
+            <hr>
+            <time-selector @start-time-changed="updateTime"></time-selector>
+            <div id="startTime">
+                Start Time: {{ startTime }} min<br>
+            </div>
+            <div id="remainingTime">
+                Remaining Time: {{ remainingTimeStr }}<br>
+            </div>
+            <div id="remainingTime">
+                Remaining Time Seconds: {{ remainingTime }}<br>
+            </div>
+            <div id="tomato" @mouseover="mouseoverTomato" @mouseout="showMouseover = false">
+                <img id="tomatoImg" src="./assets/tomato.png"
+                    @click="clickTheTomato"> <!-- @ is the same as v-on: -->
+                <div id=tomatoTooltip v-show='showMouseover'>Help: {{ mouseoverText }}</div>
+            </div>
+        </div>
+
+        <!-- Import App -->
+        <script type="text/javascript" src="main.js"></script>
+
+        <!-- Import component -->
+        <script type="text/javascript" src="components/time_selector.js"></script>
+
+        <!-- Mount App -->
+        <script>
+            const mountedApp = app.mount('#app')
+        </script>
+
+    </body>
+</html>
