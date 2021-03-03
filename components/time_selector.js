@@ -2,6 +2,8 @@ app.component('time-selector', {
     template: /*html*/ `
     <div id="time-selector">
         Set the start time:<br>
+        <button class=timeButton @click='startTime = 5'>5m</button>
+        <button class=timeButton @click='startTime = 10'>10m</button>
         <button class=timeButton @click='startTime = 15'>15m</button>
         <button class=timeButton @click='startTime = 20'>20m</button>
         <button class=timeButton @click='startTime = 25'>25m</button>

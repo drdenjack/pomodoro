@@ -70,7 +70,6 @@ const app = Vue.createApp({
                 if(this.timerId) { clearInterval(this.timerId); }
                 this.tomatoSquished = false;
                 this.updateTime(this.startTime);
-                playSquishSound();
             }
             else {
                 console.log('starting ...');
