@@ -27,6 +27,9 @@
                     @click="clickTheTomato"> <!-- @ is the same as v-on: -->
                 <div id=tomatoTooltip v-show='showMouseover'>Help: {{ mouseoverText }}</div>
             </div>
+            <button class=timeButton @click='pauseTimer'>Pause</button>
+            <button class=timeButton @click='stopTimer'>Stop</button>
+            <button class=timeButton @click='resetTimer'>Reset</button>
         </div>
 
         <!-- Import App -->
